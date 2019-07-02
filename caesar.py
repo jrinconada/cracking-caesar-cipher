@@ -30,5 +30,5 @@ def apply(message, key, encryption):
                 number = number - key  # Subtracting the shift for decryption
             number = number % NUMBER_OF_LETTERS  # Keep the number between 0 and 25 by using the modulus operator
             letter = chr(number + FIRST_LETTER)  # Converts the number back to a letter (97 - 122)
-        encrypted += letter  # Puts the letter at the end of the encrypted result message
+        encrypted += letter  # Appends the shifted letter at the end of the result message
     return encrypted

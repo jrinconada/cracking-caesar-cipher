@@ -7,11 +7,11 @@ def usage():
     manual = 'Usage: main.py [cipher] [encrypt/decrypt] [key] [message] [-i in.txt] [-o out.txt]'
     manual += 'Ciphers: caesar vigenere'
     manual += 'Examples:'
-    manual += '    main.py caesar encrypt 13 hello'
-    manual += '    main.py c e 13 hello'
-    manual += '    main.py v e thekey this is a longer message'
-    manual += '    main.py caesar decrypt -1 hal'
-    manual += '    main.py caesar encrypt 13 -i letter.txt -o secret.txt'
+    manual += '\tmain.py caesar encrypt 13 hello'
+    manual += '\tmain.py c e 13 hello'
+    manual += '\tmain.py v e thekey this is a longer message'
+    manual += '\tmain.py caesar decrypt -1 hal'
+    manual += '\tmain.py caesar encrypt 13 -i letter.txt -o secret.txt'
     return manual
 
 

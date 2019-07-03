@@ -20,13 +20,23 @@ method = sys.argv[1][0]
 choice = sys.argv[2][0]
 message = ' '.join(sys.argv[4:])
 
-if method == 'c':
-    key = eval(sys.argv[3])
-    if choice == 'e':
+if method == 'c':  # Caesar cipher
+    key = eval(sys.argv[3])  # In the Caesar cipher the key is an integer number
+    if choice == 'e':  # Encryption
         result = cipher.caesar(message.lower(), key)
         print(result)
-    elif choice == 'd':
+    elif choice == 'd':  # Decryption
         result = cipher.caesar(message.lower(), key, False)
+        print(result)
+    else:
+        usage()
+elif method == 'v':  # Vigenere cipher
+    key = sys.argv[3]  # In Vigenere cipher the key is a word
+    if choice == 'e':  # Encryption
+        result = cipher.vigenere(message.lower(), key.lower())
+        print(result)
+    elif choice == 'd':  # Decryption
+        result = cipher.vigenere(message.lower(), key.lower(), False)
         print(result)
     else:
         usage()

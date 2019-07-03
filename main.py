@@ -1,45 +1,52 @@
 import sys
 import cipher
+import storage
 
 
 def usage():
-    print('Usage: main.py [cipher] [encrypt/decrypt] [key] [message]')
-    print('Ciphers: caesar vigenere')
-    print('Examples:')
-    print('    main.py caesar encrypt 13 hello')
-    print('    main.py c e 13 hello')
-    print('    main.py v e thekey this is a longer message')
-    print('    main.py caesar decrypt -1 hal')
-    exit(-1)
+    manual = 'Usage: main.py [cipher] [encrypt/decrypt] [key] [message] [-i in.txt] [-o out.txt]'
+    manual += 'Ciphers: caesar vigenere'
+    manual += 'Examples:'
+    manual += '    main.py caesar encrypt 13 hello'
+    manual += '    main.py c e 13 hello'
+    manual += '    main.py v e thekey this is a longer message'
+    manual += '    main.py caesar decrypt -1 hal'
+    manual += '    main.py caesar encrypt 13 -i letter.txt -o secret.txt'
+    return manual
 
 
 if len(sys.argv) < 5:
-    usage()
+    print(usage())
+    exit(-1)
 
 method = sys.argv[1][0]
 choice = sys.argv[2][0]
-message = ' '.join(sys.argv[4:])
+if '-i' in sys.argv:  # Message from file
+    message = storage.read(sys.argv[5])
+else:  # Message from arguments
+    message = ' '.join(sys.argv[4:])
 
 if method == 'c':  # Caesar cipher
     key = eval(sys.argv[3])  # In the Caesar cipher the key is an integer number
     if choice == 'e':  # Encryption
         result = cipher.caesar(message.lower(), key)
-        print(result)
     elif choice == 'd':  # Decryption
         result = cipher.caesar(message.lower(), key, False)
-        print(result)
     else:
-        usage()
+        result = usage()
 elif method == 'v':  # Vigenere cipher
     key = sys.argv[3]  # In Vigenere cipher the key is a word
     if choice == 'e':  # Encryption
         result = cipher.vigenere(message.lower(), key.lower())
-        print(result)
     elif choice == 'd':  # Decryption
         result = cipher.vigenere(message.lower(), key.lower(), False)
-        print(result)
     else:
-        usage()
+        result = usage()
 else:
-    print('Invalid choice')
-    usage()
+    result = usage()
+
+if '-o' in sys.argv:  # Result to file
+    i = sys.argv.index('-o')
+    storage.write(sys.argv[i + 1], result)
+else:  # Result to console
+    print(result)

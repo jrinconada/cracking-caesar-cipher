@@ -1,6 +1,7 @@
 import sys
 import cipher
 import storage
+import analysis
 
 
 def usage():
@@ -15,38 +16,41 @@ def usage():
     return manual
 
 
-if len(sys.argv) < 5:
-    print(usage())
-    exit(-1)
+analysis.show()
 
-method = sys.argv[1][0]
-choice = sys.argv[2][0]
-if '-i' in sys.argv:  # Message from file
-    message = storage.read(sys.argv[5])
-else:  # Message from arguments
-    message = ' '.join(sys.argv[4:])
-
-if method == 'c':  # Caesar cipher
-    key = eval(sys.argv[3])  # In the Caesar cipher the key is an integer number
-    if choice == 'e':  # Encryption
-        result = cipher.caesar(message.lower(), key)
-    elif choice == 'd':  # Decryption
-        result = cipher.caesar(message.lower(), key, False)
-    else:
-        result = usage()
-elif method == 'v':  # Vigenere cipher
-    key = sys.argv[3]  # In Vigenere cipher the key is a word
-    if choice == 'e':  # Encryption
-        result = cipher.vigenere(message.lower(), key.lower())
-    elif choice == 'd':  # Decryption
-        result = cipher.vigenere(message.lower(), key.lower(), False)
-    else:
-        result = usage()
-else:
-    result = usage()
-
-if '-o' in sys.argv:  # Result to file
-    i = sys.argv.index('-o')
-    storage.write(sys.argv[i + 1], result)
-else:  # Result to console
-    print(result)
+#
+# if len(sys.argv) < 5:
+#     print(usage())
+#     exit(-1)
+#
+# method = sys.argv[1][0]
+# choice = sys.argv[2][0]
+# if '-i' in sys.argv:  # Message from file
+#     message = storage.read(sys.argv[5])
+# else:  # Message from arguments
+#     message = ' '.join(sys.argv[4:])
+#
+# if method == 'c':  # Caesar cipher
+#     key = eval(sys.argv[3])  # In the Caesar cipher the key is an integer number
+#     if choice == 'e':  # Encryption
+#         result = cipher.caesar(message.lower(), key)
+#     elif choice == 'd':  # Decryption
+#         result = cipher.caesar(message.lower(), key, False)
+#     else:
+#         result = usage()
+# elif method == 'v':  # Vigenere cipher
+#     key = sys.argv[3]  # In Vigenere cipher the key is a word
+#     if choice == 'e':  # Encryption
+#         result = cipher.vigenere(message.lower(), key.lower())
+#     elif choice == 'd':  # Decryption
+#         result = cipher.vigenere(message.lower(), key.lower(), False)
+#     else:
+#         result = usage()
+# else:
+#     result = usage()
+#
+# if '-o' in sys.argv:  # Result to file
+#     i = sys.argv.index('-o')
+#     storage.write(sys.argv[i + 1], result)
+# else:  # Result to console
+#     print(result)

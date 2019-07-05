@@ -1,8 +1,8 @@
 The following problem can be solved either the easy way or the hard way.
 
 Two trains 200 miles apart are moving toward each other; each one is going
-at a speed of 50 miles per hour.  A fly starting on the front of one of
-them flies back and forth between them at a rate of 75 miles per hour.  It
+at a speed of 50 miles per hour. A fly starting on the front of one of
+them flies back and forth between them at a rate of 75 miles per hour. It
 does this until the trains collide and crush the fly to death.  What is the
 total distance the fly has flown?
 
@@ -11,8 +11,8 @@ crushed, and one could solve the problem the hard way with pencil and paper
 by summing an infinite series of distances.  The easy way is as follows:
 Since the trains are 200 miles apart and each train is going 50 miles an
 hour, it takes 2 hours for the trains to collide.  Therefore the fly was
-flying for two hours.  Since the fly was flying at a rate of 75 miles per
-hour, the fly must have flown 150 miles.  That's all there is to it.
+flying for two hours. Since the fly was flying at a rate of 75 miles per
+hour, the fly must have flown 150 miles. That is all there is to it.
 
 When this problem was posed to John von Neumann, he immediately replied,
 "150 miles."
@@ -20,4 +20,4 @@ When this problem was posed to John von Neumann, he immediately replied,
 "It is very strange," said the poser, "but nearly everyone tries to sum the
 infinite series."
 
-"What do you mean, strange?" asked Von Neumann.  "That's how I did it!"
+"What do you mean, strange?" asked Von Neumann.  "That is how I did it!"

@@ -3,10 +3,14 @@ from tools import to_number
 import matplotlib.pyplot as plt
 
 
-def show(letter_count):
+def plot(letter_count, name):
     alphabet = list(ENGLISH_ALPHABET)
     plt.style.use('seaborn')
-    plt.bar(alphabet, letter_count)
+    plt.plot(alphabet, letter_count, label=name)
+
+
+def show():
+    plt.legend()
     plt.show()
 
 

@@ -16,7 +16,13 @@ def usage():
         main.py caesar encrypt 13 -i letter.txt -o secret.txt"""
 
 
-analysis.show(analysis.count_letters(storage.read('in.txt')))
+plain = storage.read('test_files/einstein.txt')
+caesar = cipher.caesar(plain.lower(), 2)
+vigenere = cipher.vigenere(plain.lower(), 'uncertainty')
+analysis.plot(analysis.count_letters(plain.lower()), 'Plain text')
+analysis.plot(analysis.count_letters(caesar), 'Caesar cipher')
+analysis.plot(analysis.count_letters(vigenere), 'Vigenère cipher')
+analysis.show()
 # if len(sys.argv) < 5:
 #     print(usage())  # Invalid number of arguments
 #     exit(-1)

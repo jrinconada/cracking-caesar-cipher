@@ -7,6 +7,8 @@ def plot(letter_count, name):
     alphabet = list(ENGLISH_ALPHABET)
     plt.style.use('seaborn')
     plt.plot(alphabet, letter_count, label=name)
+    # data = [1,2,3,4]
+    # plt.scatter(x=data, y=data, c=data, cmap='RdYlGn')
 
 
 def show():

@@ -1,3 +1,8 @@
+import os.path
+
+
+def file_exists(location):
+    return os.path.isfile(location)
 
 
 def read(location):

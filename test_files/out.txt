@@ -1,1 +1,49 @@
-if he had anything confidential to say, he wrote it in cipher, that is, by so changing the order of the letters of the alphabet, that not a word could be made out.
+CAESAR CIPHER:
+vjg hqnnqykpi rtqdngo ecp dg uqnxgf gkvjgt vjg gcua yca qt vjg jctf yca.
+
+vyq vtckpu 200 okngu crctv ctg oqxkpi vqyctf gcej qvjgt; gcej qpg ku iqkpi
+cv c urggf qh 50 okngu rgt jqwt. c hna uvctvkpi qp vjg htqpv qh qpg qh
+vjgo hnkgu dcem cpf hqtvj dgvyggp vjgo cv c tcvg qh 75 okngu rgt jqwt. kv
+fqgu vjku wpvkn vjg vtckpu eqnnkfg cpf etwuj vjg hna vq fgcvj.  yjcv ku vjg
+vqvcn fkuvcpeg vjg hna jcu hnqyp?
+
+vjg hna cevwcnna jkvu gcej vtckp cp kphkpkvg pwodgt qh vkogu dghqtg kv igvu
+etwujgf, cpf qpg eqwnf uqnxg vjg rtqdngo vjg jctf yca ykvj rgpekn cpf rcrgt
+da uwookpi cp kphkpkvg ugtkgu qh fkuvcpegu.  vjg gcua yca ku cu hqnnqyu:
+ukpeg vjg vtckpu ctg 200 okngu crctv cpf gcej vtckp ku iqkpi 50 okngu cp
+jqwt, kv vcmgu 2 jqwtu hqt vjg vtckpu vq eqnnkfg.  vjgtghqtg vjg hna ycu
+hnakpi hqt vyq jqwtu. ukpeg vjg hna ycu hnakpi cv c tcvg qh 75 okngu rgt
+jqwt, vjg hna owuv jcxg hnqyp 150 okngu. vjcv ku cnn vjgtg ku vq kv.
+
+yjgp vjku rtqdngo ycu rqugf vq lqjp xqp pgwocpp, jg koogfkcvgna tgrnkgf,
+"150 okngu."
+
+"kv ku xgta uvtcpig," uckf vjg rqugt, "dwv pgctna gxgtaqpg vtkgu vq uwo vjg
+kphkpkvg ugtkgu."
+
+"yjcv fq aqw ogcp, uvtcpig?" cumgf xqp pgwocpp.  "vjcv ku jqy k fkf kv!"
+
+VIGENERE CIPHER:
+olv dgeccjoxk nmssjwf toa ho wmgzvb wbkvrx dlc zejw otp ce zri fvvu usr.
+
+kkb zbegiw 200 dgdxj ocgbx ymi dmnbeu gugepy iraz hkvrx; oeac sec al xcvtq
+er v wgcww ft 50 zoviq kii fgni. o sri wrvvkgfz fb gno jpjrk mx hes bl
+dlch jcgwl sopq krb asirz uvhjkor rcid yl t iogk yj 75 kdpvq hxi vbab. mr
+ysvq lazg htdmj olv rjtzbf iypjdhv yfw tfhyr xfz jcw lh usnzr.  afvx zq lav
+hbzkp bdwkyfvv huk ppw cej ddhnb?
+
+gno jjt etrmtczl nsxq zetf lkrwa gx mlameglx eizhov ma xzkwl sssubi go kvrk
+viifnoh, yih flw vfiyj csjqi kfw iicoroq rci yyjw nol csxf kieaae rbq vktcm
+fp qmfdwam kr gijzlamv grxsiq jj ugkmrbpkc.  xfz irqq prm vy kw djpcmol:
+jwaio xfz xiyagj oek 200 wmjzw rnskk oaj oeac xiyag zg tusre 50 hmcck te
+vbab, mr oebck 2 afiey psp olv rjtzbf zy gmgpzbw.  mysekpspz xyc xep kny
+ppwdrx dgk kkb nyypn. wzlux kvr lvc uvw wjqbeu nz k vyoi fd 75 ebcsf vov
+fjyi, rzx wzl sewr cemc xefka 150 sspcn. xyyl bj oyr dlcmi zq lh zh.
+
+jnor rcmj njhszrs geq ksjcv mf xbnx zmi rvseteb, uk sqkzhzylxcm ekzpgzh,
+"150 dgdxj."
+
+"wg oc zcmc jrjteur," ykmb olv nglvf, "oad rcvvcw wovfluxi rmmvq lh jiz zri
+gijzlamv grxsiq."
+
+"rlrr vh pch soel, nxiyfzv?" ofqoh tjr ecmfrba.  "zrer dw ymo b uwq od!"

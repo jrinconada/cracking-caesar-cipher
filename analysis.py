@@ -1,5 +1,7 @@
 from tools import ENGLISH_ALPHABET
 from tools import to_number
+from tools import sort
+from tools import count_to_frequency
 import matplotlib.pyplot as plt
 
 
@@ -14,19 +16,35 @@ def theoretical():
     fig, (ax1, ax2) = plt.subplots(2)
     ax1.pie(THEORETICAL_FREQUENCIES, labels=ALPHABET_SORTED_BY_FREQUENCY, autopct='%1.1f%%')
     ax2.bar(ALPHABET_SORTED_BY_FREQUENCY, THEORETICAL_FREQUENCIES)
+    plt.show()
+
+
+def theoretical_vs_actual(sample_letter_count, sorted_by_frequency=True):
+    theoretical_frequencies, alphabet = sort(THEORETICAL_FREQUENCIES, ALPHABET_SORTED_BY_FREQUENCY, by_number=False)
+    actual_frequencies = count_to_frequency(sample_letter_count)
+    plt.title('Letter frequencies')
+    plt.plot(alphabet, theoretical_frequencies, label='Theoretical')
+    plt.plot(alphabet, actual_frequencies, label='Actual')
 
 
 def plot(letter_count, name):
     alphabet = list(ENGLISH_ALPHABET)
-    plt.style.use('seaborn')
+    plt.style.use('seaborn-muted')
     plt.plot(alphabet, letter_count, label=name)
     # data = [1,2,3,4]
     # plt.scatter(x=data, y=data, c=data, cmap='RdYlGn')
 
 
 def show():
-    # plt.legend()
+    plt.legend()
     plt.show()
+
+
+def stackplot(plain, caesar, vigenere):
+    alphabet = list(ENGLISH_ALPHABET)
+    names = ['Plain text', 'Caesar cipher', 'Vigenère cipher']
+    plt.style.use('seaborn')
+    plt.stackplot(alphabet, plain, caesar, vigenere, labels=names)
 
 
 def count_letters(message):

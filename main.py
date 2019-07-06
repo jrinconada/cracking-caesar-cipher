@@ -50,8 +50,12 @@ else:  # Result to console
     print(results)
 
 # Analise and plot
-analysis.theoretical()
-# analysis.plot(analysis.count_letters(message.lower()), 'Plain text')
-# analysis.plot(analysis.count_letters(caesar), 'Caesar cipher')
-# analysis.plot(analysis.count_letters(vigenere), 'Vigenère cipher')
+plain_letter_count = analysis.count_letters(message.lower())
+caesar_letter_count = analysis.count_letters(caesar)
+vigenere_letter_count = analysis.count_letters(vigenere)
+# analysis.theoretical()
+# analysis.plot(plain_letter_count, 'Plain text')
+# analysis.plot(caesar_letter_count, 'Caesar cipher')
+# analysis.plot(vigenere_letter_count, 'Vigenère cipher')
+analysis.theoretical_vs_actual(plain_letter_count, sorted_by_frequency=False)
 analysis.show()

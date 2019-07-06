@@ -17,3 +17,31 @@ def to_letter(number):
     number = number % NUMBER_OF_LETTERS  # Keep the number between 0 and 25 by using the modulus operator
     number = number + FIRST_LETTER  # Shift the number back to the ASCII equivalent (97 - 122)
     return chr(number)  # Convert the number back to a character
+
+
+def sort(numbers, letters, by_number=True, reverse=False):
+    """ Given two lists, sorts them together.
+        If by_number is True sorts them by number if False by letter.
+        If reverse is True sorts them in descending order """
+    # Put them together, first the one which sets the order
+    together = zip(numbers, letters) if by_number else zip(letters, numbers)
+    together = sorted(together, reverse=reverse)  # Sort them together
+    # Get back the lists, now sorted
+    if by_number:
+        numbers, letters = zip(*together)
+    else:
+        letters, numbers = zip(*together)
+
+    return numbers, letters
+
+
+def count_to_frequency(count):
+    total = 0
+    for letter_count in count:
+        total += letter_count
+
+    frequencies = []
+    for letter_count in count:
+        frequencies.append((letter_count / total) * 100)
+
+    return frequencies

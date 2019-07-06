@@ -50,7 +50,8 @@ else:  # Result to console
     print(results)
 
 # Analise and plot
-analysis.plot(analysis.count_letters(message.lower()), 'Plain text')
-analysis.plot(analysis.count_letters(caesar), 'Caesar cipher')
-analysis.plot(analysis.count_letters(vigenere), 'Vigenère cipher')
+analysis.theoretical()
+# analysis.plot(analysis.count_letters(message.lower()), 'Plain text')
+# analysis.plot(analysis.count_letters(caesar), 'Caesar cipher')
+# analysis.plot(analysis.count_letters(vigenere), 'Vigenère cipher')
 analysis.show()

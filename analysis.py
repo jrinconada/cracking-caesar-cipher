@@ -3,6 +3,19 @@ from tools import to_number
 import matplotlib.pyplot as plt
 
 
+THEORETICAL_FREQUENCIES = [12.7, 9.06, 8.17, 7.51, 6.97, 6.75, 6.33, 6.09, 5.99, 4.25, 4.02, 2.78, 2.76,
+                           2.41, 2.36, 2.23, 2.01, 1.97, 1.93, 1.49, 0.99, 0.77, 0.15, 0.15, 0.09,  0.07]
+
+ALPHABET_SORTED_BY_FREQUENCY = ['e', 't', 'a', 'o', 'i', 'n', 's', 'h', 'r', 'd', 'l', 'c', 'u',
+                                'm', 'w', 'f', 'g', 'y', 'p', 'b', 'v', 'k', 'j', 'x', 'q', 'z']
+
+
+def theoretical():
+    fig, (ax1, ax2) = plt.subplots(2)
+    ax1.pie(THEORETICAL_FREQUENCIES, labels=ALPHABET_SORTED_BY_FREQUENCY, autopct='%1.1f%%')
+    ax2.bar(ALPHABET_SORTED_BY_FREQUENCY, THEORETICAL_FREQUENCIES)
+
+
 def plot(letter_count, name):
     alphabet = list(ENGLISH_ALPHABET)
     plt.style.use('seaborn')
@@ -12,7 +25,7 @@ def plot(letter_count, name):
 
 
 def show():
-    plt.legend()
+    # plt.legend()
     plt.show()
 
 

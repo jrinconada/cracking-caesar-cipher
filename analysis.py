@@ -3,6 +3,7 @@ from tools import to_number
 from tools import sort
 from tools import count_to_frequency
 import matplotlib.pyplot as plt
+import numpy as np
 
 
 THEORETICAL_FREQUENCIES = [12.7, 9.06, 8.17, 7.51, 6.97, 6.75, 6.33, 6.09, 5.99, 4.25, 4.02, 2.78, 2.76,
@@ -16,15 +17,23 @@ def theoretical():
     fig, (ax1, ax2) = plt.subplots(2)
     ax1.pie(THEORETICAL_FREQUENCIES, labels=ALPHABET_SORTED_BY_FREQUENCY, autopct='%1.1f%%')
     ax2.bar(ALPHABET_SORTED_BY_FREQUENCY, THEORETICAL_FREQUENCIES)
-    plt.show()
 
 
-def theoretical_vs_actual(sample_letter_count, sorted_by_frequency=True):
+def theoretical_vs_actual(sample_letter_count):
+    # Sort in alphabetical order
     theoretical_frequencies, alphabet = sort(THEORETICAL_FREQUENCIES, ALPHABET_SORTED_BY_FREQUENCY, by_number=False)
-    actual_frequencies = count_to_frequency(sample_letter_count)
-    plt.title('Letter frequencies')
-    plt.plot(alphabet, theoretical_frequencies, label='Theoretical')
-    plt.plot(alphabet, actual_frequencies, label='Actual')
+    actual_frequencies = count_to_frequency(sample_letter_count)  # Get letter frequency from letter count
+    # Plot
+    plt.title('Letter frequency comparison')
+    plt.plot(alphabet, theoretical_frequencies, linestyle='--', color='gray', label='Theoretical')
+    plt.plot(alphabet, actual_frequencies, color='darkgray', label='Actual')
+    # Fill
+    plt.fill_between(alphabet, theoretical_frequencies, actual_frequencies,  # Fill green bellow the actual frequencies
+                     where=np.array(theoretical_frequencies) <= np.array(actual_frequencies),
+                     interpolate=True, color='green', alpha=0.3)
+    plt.fill_between(alphabet, theoretical_frequencies, actual_frequencies,  # Fill red above the actual frequencies
+                     where=np.array(theoretical_frequencies) > np.array(actual_frequencies),
+                     interpolate=True, color='red', alpha=0.3)
 
 
 def plot(letter_count, name):
@@ -35,8 +44,9 @@ def plot(letter_count, name):
     # plt.scatter(x=data, y=data, c=data, cmap='RdYlGn')
 
 
-def show():
-    plt.legend()
+def show(legend=True):
+    if legend:
+        plt.legend()
     plt.show()
 
 

@@ -3,7 +3,9 @@ Visualising letter frequency in encrypted massages using *Caesar* and *Vigenère
 
 ## About the encryption
 For simplicity, characters that are not part of the English alphabet are ignored by the cipher and included in the final result.
-Some explamples of invalid characters are: spaces, numbers, punctuation, other alphabet letters...
+Some explamples of ignored characters are: spaces, numbers, punctuation, symbols, other alphabet letters...
+
+In a real life example this characters may also be encrypted to preserve the integrity of the original message and not to give out any structural clues that might aid to the cracking the encoded message.
 
 ## Usage
 Written in **Python 3** using **matplotlib** for the graphs and **numpy** for some number and list processing.

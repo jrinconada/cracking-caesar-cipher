@@ -16,9 +16,11 @@ ALPHABET_SORTED_BY_FREQUENCY = ['e', 't', 'a', 'o', 'i', 'n', 's', 'h', 'r', 'd'
 
 def theoretical():
     """ Shows theoretical letter count plotter as a pie chart and a bar chart sorted by frequency """
+    plt.style.use('seaborn-muted')  # Set display style
+    colors = plt.rcParams['axes.prop_cycle'].by_key()['color']  # Get cycle of colors
     fig, (ax1, ax2) = plt.subplots(2)
-    ax1.pie(THEORETICAL_FREQUENCIES, labels=ALPHABET_SORTED_BY_FREQUENCY, autopct='%1.1f%%')
-    ax2.bar(ALPHABET_SORTED_BY_FREQUENCY, THEORETICAL_FREQUENCIES)
+    ax1.pie(THEORETICAL_FREQUENCIES, labels=ALPHABET_SORTED_BY_FREQUENCY, autopct='%1.1f%%')  # Show pie chart
+    ax2.bar(ALPHABET_SORTED_BY_FREQUENCY, THEORETICAL_FREQUENCIES, color=colors)  # Show bar chart
 
 
 def theoretical_vs_actual(sample_letter_count):
@@ -43,8 +45,6 @@ def plot(letter_count, name):
     alphabet = list(ENGLISH_ALPHABET)
     plt.style.use('seaborn-muted')
     plt.plot(alphabet, letter_count, label=name)
-    # data = [1,2,3,4]
-    # plt.scatter(x=data, y=data, c=data, cmap='RdYlGn')
 
 
 def show(legend=True):

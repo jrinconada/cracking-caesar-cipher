@@ -49,14 +49,21 @@ if '-o' in sys.argv:  # Result to file
 else:  # Result to console
     print(results)
 
-# Analise and plot
+# Analise by counting the letter in the alphabet
 plain_letter_count = analysis.count_letters(message.lower())
 caesar_letter_count = analysis.count_letters(caesar)
 vigenere_letter_count = analysis.count_letters(vigenere)
-# analysis.theoretical()
-# analysis.plot(plain_letter_count, 'Plain text')
-# analysis.plot(caesar_letter_count, 'Caesar cipher')
-# analysis.plot(vigenere_letter_count, 'Vigenère cipher')
-# analysis.theoretical_vs_actual(plain_letter_count)
-analysis.matrix(message, vigenere_letter_count)
+# Show theoretical letter frequency
+analysis.theoretical()
 analysis.show(legend=False)
+# Show comparison between theoretical and actual letter frequency
+analysis.theoretical_vs_actual(plain_letter_count)
+analysis.show()
+# Show a matrix of letter frequency
+analysis.matrix(message, plain_letter_count)
+analysis.show(legend=False)
+# Show letter count analysis comparing original text, Caesar and Vigenère ciphers
+analysis.plot(plain_letter_count, 'Plain text')
+analysis.plot(caesar_letter_count, 'Caesar cipher')
+analysis.plot(vigenere_letter_count, 'Vigenère cipher')
+analysis.show()

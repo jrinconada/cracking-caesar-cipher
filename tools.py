@@ -1,3 +1,5 @@
+import numpy as np
+
 ENGLISH_ALPHABET = 'abcdefghijklmnopqrstuvwxyz'
 FIRST_LETTER = ord(ENGLISH_ALPHABET[0])  # Get the ASCII number of the first letter of the alphabet
 NUMBER_OF_LETTERS = len(ENGLISH_ALPHABET)  # Get the number of letters in alphabet
@@ -36,12 +38,39 @@ def sort(numbers, letters, by_number=True, reverse=False):
 
 
 def count_to_frequency(count):
+    """ Given a letter count gets the frequency aa a percentage of the total number of letters. """
     total = 0
-    for letter_count in count:
+    for letter_count in count:  # Sum all letter counts to get the total number of letters
         total += letter_count
 
     frequencies = []
-    for letter_count in count:
+    for letter_count in count:  # For every letter count
+        # Divide by the total number of letter and multiply by 100 to get the frequency percentage
         frequencies.append((letter_count / total) * 100)
 
     return frequencies
+
+
+def to_matrix(letters, letter_count):
+    """ Transforms a string to matrix given the letter count """
+
+    line_size = np.round(np.sqrt(len(letters)))  # Get the closest square, for example: for 20 is 4, since 4*4 = 16
+
+    matrix = []  # A matrix is a list of lists
+    line = []  # Letter count for each line
+    i = 0  # Word counter
+
+    for letter in letters:  # Get the count for every letter in the message
+        if i == line_size:  # Line change
+            matrix.append(line)  # Add line
+            line = []  # Reset line data
+            i = 0  # Reset line counter
+        else:  # Same line
+            if letter in ENGLISH_ALPHABET:  # Only get letter count if it is part of the alphabet
+                position = to_number(letter)  # Get the position of that letter
+                line.append(letter_count[position])  # Get the letter count of that letter
+            else:
+                line.append(0)  # If it is in the alphabet, just use a 0 count
+            i += 1  # Add one to word count for this line
+
+    return matrix

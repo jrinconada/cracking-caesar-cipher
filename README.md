@@ -1,14 +1,20 @@
 # Cracking Caesar Cipher
 Visualising letter frequency in encrypted massages using *Caesar* and *Vigenère* ciphers.
+
+## About the encryption
+For simplicity, characters that are not part of the English alphabet are ignored by the cipher and included in the final result.
+Some explamples of invalid characters are: spaces, numbers, punctuation, other alphabet letters...
+
 ## Usage
 Written in **Python 3** using **matplotlib** for the graphs and **numpy** for some number and list processing.
 
-To run the program the following parameters must be specify:
+To run the program the following parameters must be specified:
 - **Option**: `encrypt` or `decrypt` or `e` or `d` to choose encryption or decryption of the message.
 - **Caesar cipher key**: Must be an *integer* number.
 - **Vigenère cipher key**: Must be word composed of letters from *a* to *z*.
-- **Message**: Can be written directly in the console or from a file with option `-i`.
-- **Result**: By default the result is shown in the console, it can be or to a file with option `-o`.
+- **Message**: Can be typed directly in the console or read from a file with option `-i`.
+- **Result** [optional]: By default the result is shown in the console, it can be saved to a file with option `-o`.
+
 ### General form 
 ```
 python main.py encrypt/decrypt caesar-key vigenere-key [message] [-i in.txt] [-o out.txt]

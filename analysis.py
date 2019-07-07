@@ -8,19 +8,27 @@ import numpy as np
 
 
 THEORETICAL_FREQUENCIES = [12.7, 9.06, 8.17, 7.51, 6.97, 6.75, 6.33, 6.09, 5.99, 4.25, 4.02, 2.78, 2.76,
-                           2.41, 2.36, 2.23, 2.01, 1.97, 1.93, 1.49, 0.99, 0.77, 0.15, 0.15, 0.09,  0.07]
+                           2.41, 2.36, 2.23, 2.01, 1.97, 1.93, 1.49, 0.99, 0.77, 0.15, 0.15, 0.09, 0.07]
 
 ALPHABET_SORTED_BY_FREQUENCY = ['e', 't', 'a', 'o', 'i', 'n', 's', 'h', 'r', 'd', 'l', 'c', 'u',
                                 'm', 'w', 'f', 'g', 'y', 'p', 'b', 'v', 'k', 'j', 'x', 'q', 'z']
 
 
 def theoretical():
-    """ Shows theoretical letter count plotter as a pie chart and a bar chart sorted by frequency """
+    """ Shows theoretical letter count plotted as a pie chart and a bar chart sorted by frequency """
     plt.style.use('seaborn-muted')  # Set display style
     colors = plt.rcParams['axes.prop_cycle'].by_key()['color']  # Get cycle of colors
-    fig, (ax1, ax2) = plt.subplots(2)
-    ax1.pie(THEORETICAL_FREQUENCIES, labels=ALPHABET_SORTED_BY_FREQUENCY, autopct='%1.1f%%')  # Show pie chart
-    ax2.bar(ALPHABET_SORTED_BY_FREQUENCY, THEORETICAL_FREQUENCIES, color=colors)  # Show bar chart
+    plt.title('Theoretical letter frequency for the English alphabet')  # Set plot title
+
+    plt.bar(ALPHABET_SORTED_BY_FREQUENCY, THEORETICAL_FREQUENCIES, color=colors)  # Show bar chart
+
+    # For the pie chart to be nicer, last 8 frequencies displayed together
+    alphabet_pie = ALPHABET_SORTED_BY_FREQUENCY[:-7]  # Remove the last 8 letters for the pie chart
+    alphabet_pie.append('y - z')  # Put the last 8 as a single part of the pie
+    frequencies_pie = THEORETICAL_FREQUENCIES[:-7]  # # Remove the last 8 frequencies
+    frequencies_pie.append(3.71)  # Add the las 8 frequencies together
+    ax = plt.axes([.35, .27, .6, .6])  # Draw the pie chart inside the bar chart
+    ax.pie(frequencies_pie, labels=alphabet_pie, autopct='%.1f', pctdistance=0.8)  # Show pie chart
 
 
 def theoretical_vs_actual(sample_letter_count):
@@ -42,9 +50,10 @@ def theoretical_vs_actual(sample_letter_count):
 
 
 def plot(letter_count, name):
-    alphabet = list(ENGLISH_ALPHABET)
-    plt.style.use('seaborn-muted')
-    plt.plot(alphabet, letter_count, label=name)
+    """ Given a list of count for every letter in alphabetical order and a name displays the counts as a line plot """
+    plt.style.use('seaborn-muted')  # Set display style
+    alphabet = list(ENGLISH_ALPHABET)  # Get a list from a string with all the letters in the alphabet
+    plt.plot(alphabet, letter_count, label=name)  # Plot the line using the alphabet as x and the count as y
 
 
 def show(legend=True):

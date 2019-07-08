@@ -25,12 +25,12 @@ if len(sys.argv) < 5:
 encrypt = True if sys.argv[1][0] == 'e' else False
 
 # Get the input
-if '-i' in sys.argv:  # Message from file
+if '-i' in sys.argv:  # Get message from file
     if not storage.file_exists(sys.argv[5]):  # Check if file exists
         print('File not found.')
         exit(-1)
     message = storage.read(sys.argv[5])
-else:  # Message from arguments
+else:  # Get message from arguments
     message = ' '.join(sys.argv[4:])
 
 # Get the keys
@@ -43,25 +43,29 @@ vigenere = cipher.vigenere(message.lower(), key_vigenere.lower(), encrypt)
 
 # Output results
 results = 'CAESAR CIPHER:\n' + caesar + '\n\nVIGENERE CIPHER:\n' + vigenere
-if '-o' in sys.argv:  # Result to file
+if '-o' in sys.argv:  # Write result to file
     i = sys.argv.index('-o')
     storage.write(sys.argv[i + 1], results)
-else:  # Result to console
+else:  # Write result to console
     print(results)
 
 # Analise by counting the letter in the alphabet
 plain_letter_count = analysis.count_letters(message.lower())
 caesar_letter_count = analysis.count_letters(caesar)
 vigenere_letter_count = analysis.count_letters(vigenere)
+
 # Show theoretical letter frequency
 analysis.theoretical()
 analysis.show(legend=False)
+
 # Show comparison between theoretical and actual letter frequency
 analysis.theoretical_vs_actual(plain_letter_count)
 analysis.show()
+
 # Show a matrix of letter frequency
 analysis.matrix(message, plain_letter_count)
 analysis.show(legend=False)
+
 # Show letter count analysis comparing original text, Caesar and Vigenère ciphers
 analysis.plot(plain_letter_count, 'Plain text')
 analysis.plot(caesar_letter_count, 'Caesar cipher')

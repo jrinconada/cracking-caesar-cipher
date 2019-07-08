@@ -15,7 +15,7 @@ ALPHABET_SORTED_BY_FREQUENCY = ['e', 't', 'a', 'o', 'i', 'n', 's', 'h', 'r', 'd'
 
 
 def theoretical():
-    """ Shows theoretical letter count plotted as a pie chart and a bar chart sorted by frequency """
+    """ Shows theoretical letter count plotted as a pie chart and a bar chart sorted by frequency. """
     plt.style.use('seaborn-muted')  # Set display style
     colors = plt.rcParams['axes.prop_cycle'].by_key()['color']  # Get cycle of colors
     plt.title('Theoretical letter frequency for the English alphabet')  # Set plot title
@@ -32,7 +32,7 @@ def theoretical():
 
 
 def theoretical_vs_actual(sample_letter_count):
-    """ Given  a sample letter count plots side by side with the theoretical letter frequency for comparison """
+    """ Given  a sample letter count plots side by side with the theoretical letter frequency for comparison. """
     # Sort in alphabetical order
     theoretical_frequencies, alphabet = sort(THEORETICAL_FREQUENCIES, ALPHABET_SORTED_BY_FREQUENCY, by_number=False)
     actual_frequencies = count_to_frequency(sample_letter_count)  # Get letter frequency from letter count
@@ -50,7 +50,7 @@ def theoretical_vs_actual(sample_letter_count):
 
 
 def plot(letter_count, name):
-    """ Given a list of count for every letter in alphabetical order and a name displays the counts as a line plot """
+    """ Given a list of count for every letter in alphabetical order and a name displays the counts as a line plot. """
     plt.style.use('seaborn-muted')  # Set display style
     alphabet = list(ENGLISH_ALPHABET)  # Get a list from a string with all the letters in the alphabet
     plt.plot(alphabet, letter_count, label=name)  # Plot the line using the alphabet as x and the count as y
@@ -64,7 +64,7 @@ def show(legend=True):
 
 
 def matrix(message, letter_count):
-    """ Show letter count as a matrix of colors, the more intense the color, the more frequent the letter is """
+    """ Show letter count as a matrix of colors, the more intense the color, the more frequent the letter is. """
     letter_count_matrix = to_matrix(message, letter_count)  # Transform the message to a matrix with every letter count
     plt.imshow(letter_count_matrix)  # Plot the matrix
     plt.colorbar()  # Show a color bar for reference
@@ -72,7 +72,7 @@ def matrix(message, letter_count):
 
 
 def count_letters(message):
-    """ Goes through every letter in the message and counts how many times it appears """
+    """ Goes through every letter in the message and counts how many times it appears. """
     letter_count = [0] * len(ENGLISH_ALPHABET)  # Create a list of zeroes to start with count zero for every letter
 
     for letter in message:  # For every letter in the message

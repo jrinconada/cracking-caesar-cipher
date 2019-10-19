@@ -3,7 +3,7 @@ Visualising letter frequency in encrypted massages using *Caesar* and *Vigenère
 
 ## About the encryption
 For simplicity, characters that are not part of the English alphabet are ignored by the cipher and included in the final result.
-Some explamples of ignored characters are: spaces, numbers, punctuation, symbols, other alphabet letters...
+Some examples of ignored characters are: spaces, numbers, punctuation, symbols, other alphabet letters...
 
 In a real life example this characters may also be encrypted to preserve the integrity of the original message and not to give out any structural clues that might ease the cracking of the encoded message.
 

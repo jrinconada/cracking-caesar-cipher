@@ -1,6 +1,9 @@
 # Cracking Caesar Cipher
 Visualising letter frequency in encrypted massages using *Caesar* and *Vigenère* ciphers.
 
+## Some examples
+![Sample graphs](banner.png)
+
 ## About the encryption
 For simplicity, characters that are not part of the English alphabet are ignored by the cipher and included in the final result.
 Some examples of ignored characters are: spaces, numbers, punctuation, symbols, other alphabet letters...

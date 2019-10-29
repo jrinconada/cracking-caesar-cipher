@@ -1,17 +1,17 @@
 # Cracking Caesar Cipher
 Visualising letter frequency in encrypted massages using *Caesar* and *Vigenère* ciphers.
 
-## Some examples
+## Some examples of the graphs
 ![Sample graphs](banner.png)
 
-## About the encryption
+## About the encryption used
 For simplicity, characters that are not part of the English alphabet are ignored by the cipher and included in the final result.
 Some examples of ignored characters are: spaces, numbers, punctuation, symbols, other alphabet letters...
 
-In a real life example this characters may also be encrypted to preserve the integrity of the original message and not to give out any structural clues that might ease the cracking of the encoded message.
+In a real life example this characters may also be encrypted to preserve the integrity of the original message and not to reveal any structural clues that might ease the cracking of the encoded message.
 
 ## Usage
-Written in **Python 3** using **matplotlib** for the graphs and **numpy** for some number and list processing.
+It is written in **Python 3** using **matplotlib** for the graphs and **numpy** for some number and list processing, so all of this must be installed.
 
 To run the program the following parameters must be specified:
 - **Option**: `encrypt` or `decrypt` or `e` or `d` to choose encryption or decryption of the message.
